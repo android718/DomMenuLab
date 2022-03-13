@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Guess The Number</title>
+  
+    <style>
+        html {
+    font-family: sans-serif;
+    }
+      
+        body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+    }
+    </style>
+
+  <div>
+    <img src="https://pixabay.com/images/id-1296110/">
+  </div>
+</head>
+  
+<body>
+<h1>Do You Want To Play A Game?</h1>
+  
+<p>A random number has been selected between 1 - 100. 
+Can you guess it?</p>
+  
+<div class="form">
+    <label for="guessField">Enter a guessy-guess: </label>
+    <input type = "text" id = "guessField" class = "guessField">
+    <input type = "submit" value = "Submit guessy-guess" 
+           class = "guessSubmit" id = "submitguess">
+</div>
+  
+<script type = "text/javascript">
+  
+    // random value generated
+    let y = Math.floor(Math.random() * 100 + 1);
+      
+    // counting the number of guesses
+    // made for correct Guess
+    let guess = 1;
+      
+    document.getElementById("submitguess").onclick = function(){
+      
+   // number guessed by user     
+   let x = document.getElementById("guessField").value;
+  
+   if(x == y)
+   {    
+       alert("YAY!!! YOU GUESSED IT IN "
+               + guess + " GUESSESY-GUESSES! ");
+   }
+   else if(x > y) /* if guessed number is greater
+                   than actual number*/ 
+   {    
+       guess++;
+       alert("BING BONG!! GUESS AGAIN! TRY A SMALLER NUMBER");
+   }
+   else
+   {
+       guess++;
+       alert("BING BONG!! TRY A GREATER NUMBER")
+   }
+}
+</script>
+</body>
+</html>     
